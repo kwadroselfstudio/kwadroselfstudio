@@ -1,19 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
   <title>Kwadro Self Shoot Studio</title>
-
-  <meta http-equiv="refresh"
-        content="0;url=https://script.google.com/macros/s/AKfycby29mB4zO4MklRH-S8HnIDAHCkmqnge9sUqtP5TPtd1eQlcMs30JkU9watOUCO9UsQWWQ/exec">
-
-  <script>
-    window.location.replace("https://script.google.com/macros/s/AKfycby29mB4zO4MklRH-S8HnIDAHCkmqnge9sUqtP5TPtd1eQlcMs30JkU9watOUCO9UsQWWQ/exec");
-  </script>
+  <style>
+    body {
+      margin: 0; min-height: 100vh; display: grid; place-items: center;
+      font-family: Arial, sans-serif; background: #f5eee5;
+      color: #211d1a; text-align: center;
+    }
+    main { padding: 24px; }
+    p { color: #6b625a; }
+  </style>
 </head>
 <body>
-  Redirecting to Kwadro Booking...
-  <a href="https://script.google.com/macros/s/AKfycby29mB4zO4MklRH-S8HnIDAHCkmqnge9sUqtP5TPtd1eQlcMs30JkU9watOUCO9UsQWWQ/exec">Click here if not redirected.</a>
+  <main>
+    <h1>Kwadro Self Shoot Studio</h1>
+    <p id="status">Redirecting you to our booking page...</p>
+    <p>If you are not redirected, <a id="booking-link" href="#">tap here</a>.</p>
+  </main>
+  <script>
+    // Replace this placeholder with your Google Apps Script Web App URL
+    // (the URL ending in /exec).
+    const bookingURL = "https://script.google.com/macros/s/AKfycby29mB4zO4MklRH-S8HnIDAHCkmqnge9sUqtP5TPtd1eQlcMs30JkU9watOUCO9UsQWWQ/exec";
+
+    document.getElementById("booking-link").href = bookingURL;
+
+    if (bookingURL.startsWith("https://script.google.com/")) {
+      window.location.replace(bookingURL);
+    } else {
+      document.getElementById("status").textContent =
+        "The booking page has not been configured yet.";
+    }
+  </script>
 </body>
 </html>
